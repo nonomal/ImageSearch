@@ -344,6 +344,7 @@ public sealed class ImageIndexService : Disposable
                     item.Stream.Dispose();
                 }
             });
+            Thread.Yield();
         }
     }
 

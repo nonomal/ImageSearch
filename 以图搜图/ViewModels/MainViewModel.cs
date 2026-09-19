@@ -331,7 +331,7 @@ public partial class MainViewModel : ObservableObject
             return;
         }
 
-        if (new FileInfo(ImagePath).DetectFiletype().MimeType?.StartsWith("image") != true)
+        if (!new FileInfo(ImagePath).IsImage())
         {
             MessageBox.Show(Application.Current.MainWindow!, "不是图像文件，无法检索", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
             return;
